@@ -57,11 +57,13 @@ class KeenableSearchProvider extends SearchProvider {
         }
 
         return results
-            .map((r): SearchResult => ({
-                title: r.title ?? r.url,
-                description: r.snippet || r.description || '',
-                url: r.url
-            }))
+            .map(
+                (r): SearchResult => ({
+                    title: r.title ?? r.url,
+                    description: r.snippet || r.description || '',
+                    url: r.url
+                })
+            )
             .slice(0, limit)
     }
 
